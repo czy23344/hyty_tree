@@ -8,7 +8,7 @@
     <groupId>com.hyty.tree</groupId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>com.spring.demo.eureka</name>
+    <name>com.spring.hyty_tree</name>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
