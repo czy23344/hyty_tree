@@ -30,11 +30,17 @@ public class TreeController {
     public Object saveupload(TreeEntiy treeEntiy) {
         Map<String, Object> resultMap = new HashMap<>();
         try {
-            TreeEntiy entiy = treeEntiyService.saveorupload(treeEntiy);
-            resultMap.put("result", true);
-            resultMap.put("entiy", entiy);
-            resultMap.put("message", "保存成功");
-            return JSON.toJSONString(resultMap);
+            Object entiy = treeEntiyService.saveorupload(treeEntiy);
+            if(entiy!=null){
+                resultMap.put("result", true);
+                resultMap.put("entiy", entiy);
+                resultMap.put("message", "保存成功");
+                return JSON.toJSONString(resultMap);
+            }else{
+                resultMap.put("result", false);
+                resultMap.put("message", "保存失败，自动生成code出错");
+                return JSON.toJSONString(resultMap);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             resultMap.put("result", false);

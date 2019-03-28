@@ -13,7 +13,7 @@ public interface TreeEntiyService {
      * @return TreeEntiy
      * @throws Exception
      */
-    TreeEntiy saveorupload(TreeEntiy treeEntiy)throws Exception;
+    Object saveorupload(TreeEntiy treeEntiy)throws Exception;
 
     /**
      * 查询树形结构

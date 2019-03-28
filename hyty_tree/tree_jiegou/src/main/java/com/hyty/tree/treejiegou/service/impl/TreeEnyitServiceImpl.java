@@ -27,16 +27,21 @@ public class TreeEnyitServiceImpl implements TreeEntiyService {
     private static final List<TreeEntiy> treeEntiyList = new ArrayList<>();
 
     @Override
-    public TreeEntiy saveorupload(TreeEntiy treeEntiy) throws Exception {
+    public Object saveorupload(TreeEntiy treeEntiy) throws Exception {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         String date = format.format(new Date());
         String founder = "测试demo";
         treeEntiy.setState("1");
         treeEntiy.setFounder(founder);
         treeEntiy.setFounderts(date);
-        treeEntiy.setCode(this.saveservice(treeEntiy));
-        entiyDao.save(treeEntiy);
-        return treeEntiy;
+        String code = this.saveservice(treeEntiy);
+        if(code!=null){
+            treeEntiy.setCode(this.saveservice(treeEntiy));
+        }else{
+            return null;
+        }
+        TreeEntiy t =entiyDao.save(treeEntiy);
+        return t;
     }
 
     @Override
