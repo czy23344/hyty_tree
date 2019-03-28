@@ -44,9 +44,9 @@ public class PersonnelController {
     }
 
     /**
-     * 保存员工实体
+     * 查询员工组织结构
      *
-     * @param
+     * @param id 员工ID
      * @return JSON
      */
     @RequestMapping(value = "/select", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
