@@ -23,7 +23,7 @@ public class TreeController {
     /**
      * 保存组织架构节点
      *
-     * @param
+     * @param treeEntiy 组织结构实体
      * @return JSON
      */
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = "text/html;charset=UTF-8")
