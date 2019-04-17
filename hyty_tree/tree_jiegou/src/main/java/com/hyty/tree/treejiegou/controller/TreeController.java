@@ -3,6 +3,8 @@ package com.hyty.tree.treejiegou.controller;
 import com.alibaba.fastjson.JSON;
 import com.hyty.tree.treejiegou.entity.TreeEntiy;
 import com.hyty.tree.treejiegou.service.TreeEntiyService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +18,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/tree")
+@Api("组织架构接口")
 public class TreeController {
     @Autowired
     TreeEntiyService treeEntiyService;
@@ -27,6 +30,7 @@ public class TreeController {
      * @return JSON
      */
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = "text/html;charset=UTF-8")
+    @ApiOperation(value = "保存组织架构节点",notes = "传入组织架构信息")
     public Object saveupload(TreeEntiy treeEntiy) {
         Map<String, Object> resultMap = new HashMap<>();
         try {
