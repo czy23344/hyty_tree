@@ -1,9 +1,12 @@
 package com.hyty.tree.treejiegou.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by czy on 2019/3/22.
@@ -45,6 +48,16 @@ public class Personnel implements Serializable {
      */
     @Transient
     private String treeId;
+
+    /**
+     * 与角色权限关联
+     * @return
+     */
+//    @JSONField(serialize = false)
+//    @ManyToMany ( mappedBy = "personnels" ,cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+//    private Set<RoleJurisdiction> roleJurisdictions = new HashSet<>();
+
+
 
     public String getId() {
         return id;
@@ -93,4 +106,12 @@ public class Personnel implements Serializable {
     public void setTreeId(String treeId) {
         this.treeId = treeId;
     }
+
+//    public Set<RoleJurisdiction> getRoleJurisdictions() {
+//        return roleJurisdictions;
+//    }
+//
+//    public void setRoleJurisdictions(Set<RoleJurisdiction> roleJurisdictions) {
+//        this.roleJurisdictions = roleJurisdictions;
+//    }
 }
