@@ -2,20 +2,13 @@ package com.hyty.tree.treejiegou;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Created by czy on 2019/3/22.
  */
 @SpringBootApplication
+@EnableSwagger2
 public class TreeApplication {
     public static void main(String[] args) {
         SpringApplication.run(TreeApplication.class, args);

@@ -18,7 +18,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/tree")
-@Api("组织架构接口")
+@Api(value = "TreeController",description = "组织架构")
 public class TreeController {
     @Autowired
     TreeEntiyService treeEntiyService;
@@ -30,7 +30,7 @@ public class TreeController {
      * @return JSON
      */
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = "text/html;charset=UTF-8")
-    @ApiOperation(value = "保存组织架构节点",notes = "传入组织架构信息")
+    @ApiOperation(value ="保存组织架构节点",notes ="",httpMethod = "组织结构实体")
     public Object saveupload(TreeEntiy treeEntiy) {
         Map<String, Object> resultMap = new HashMap<>();
         try {

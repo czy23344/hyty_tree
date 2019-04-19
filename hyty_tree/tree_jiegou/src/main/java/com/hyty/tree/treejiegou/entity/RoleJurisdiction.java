@@ -1,6 +1,7 @@
 package com.hyty.tree.treejiegou.entity;
 
 
+import com.alibaba.fastjson.annotation.JSONField;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -50,8 +51,9 @@ public class RoleJurisdiction implements Serializable {
     /**
      * 角色权限(多)与企业员工(多)_关联
      */
-//    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.REFRESH}, fetch = FetchType.EAGER)
-//    private Set<Personnel> personnels = new HashSet<>();
+    @JSONField(serialize = false)
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    private Set<Personnel> personnels = new HashSet<>();
 
 
     /**
@@ -122,11 +124,11 @@ public class RoleJurisdiction implements Serializable {
         this.businessModuleId = businessModuleId;
     }
 
-//    public Set<Personnel> getPersonnels() {
-//        return personnels;
-//    }
-//
-//    public void setPersonnels(Set<Personnel> personnels) {
-//        this.personnels = personnels;
-//    }
+    public Set<Personnel> getPersonnels() {
+        return personnels;
+    }
+
+    public void setPersonnels(Set<Personnel> personnels) {
+        this.personnels = personnels;
+    }
 }

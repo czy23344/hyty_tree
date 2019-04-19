@@ -53,9 +53,9 @@ public class Personnel implements Serializable {
      * 与角色权限关联
      * @return
      */
-//    @JSONField(serialize = false)
-//    @ManyToMany ( mappedBy = "personnels" ,cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-//    private Set<RoleJurisdiction> roleJurisdictions = new HashSet<>();
+    @JSONField(serialize = false)
+    @ManyToMany ( mappedBy = "personnels" ,cascade = {CascadeType.DETACH, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    private Set<RoleJurisdiction> roleJurisdictions = new HashSet<>();
 
 
 
@@ -107,11 +107,11 @@ public class Personnel implements Serializable {
         this.treeId = treeId;
     }
 
-//    public Set<RoleJurisdiction> getRoleJurisdictions() {
-//        return roleJurisdictions;
-//    }
-//
-//    public void setRoleJurisdictions(Set<RoleJurisdiction> roleJurisdictions) {
-//        this.roleJurisdictions = roleJurisdictions;
-//    }
+    public Set<RoleJurisdiction> getRoleJurisdictions() {
+        return roleJurisdictions;
+    }
+
+    public void setRoleJurisdictions(Set<RoleJurisdiction> roleJurisdictions) {
+        this.roleJurisdictions = roleJurisdictions;
+    }
 }
